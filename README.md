@@ -14,7 +14,7 @@ learned blue-team work: what I studied, what I practised, what I built, and what
 | | |
 | :--- | :--- |
 | **Status** | Learning Path complete — 25 of 25 modules · 3 live alert cases closed · 6 investigation reports |
-| **Platform** | [LetsDefend](https://app.letsdefend.io) · **Profile:** [gnopattan](https://app.letsdefend.io/user/gnopattan) |
+| **Platform** | [LetsDefend](https://app.letsdefend.io/user/gnopattan) — profile `gnopattan` |
 | **Period** | November – December 2026 |
 | **Sister portfolio** | [TryHackMe-IT-Cybersecurity-Portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio) |
 
@@ -164,7 +164,7 @@ application and want the long version, ask and I will send it.
 
 | Item | Link |
 | :--- | :--- |
-| LetsDefend profile | **[app.letsdefend.io/user/gnopattan](https://app.letsdefend.io/user/gnopattan)** — the account the path was completed on |
+| LetsDefend profile | [LetsDefend](https://app.letsdefend.io/user/gnopattan) — account `gnopattan`, the account the path was completed on |
 | TryHackMe profile | [tryhackme.com/p/nattapongsindhu](https://tryhackme.com/p/nattapongsindhu) |
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
 | TryHackMe portfolio | [TryHackMe-IT-Cybersecurity-Portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio) |

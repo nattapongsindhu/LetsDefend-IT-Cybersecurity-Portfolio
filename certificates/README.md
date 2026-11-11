@@ -9,7 +9,7 @@ is the register; when an image is added, the file column is filled in.
 
 | Certificate / Badge | Platform | Issued | Image | Verify |
 | :--- | :--- | :--- | :--- | :--- |
-| SOC Analyst Learning Path | LetsDefend | 2026 | *pending download* | [LetsDefend](https://app.letsdefend.io/user/gnopattan) |
+| SOC Analyst Learning Path | LetsDefend | 2026 | *pending download* | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | Pre Security | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
 | SOC Level 1 | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
 

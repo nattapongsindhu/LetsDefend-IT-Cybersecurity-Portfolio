@@ -17,6 +17,8 @@ learned blue-team work: what I studied, what I practised, what I built, and what
 | **Platform** | [LetsDefend](https://letsdefend.io/) — profile [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | **Period** | November – December 2026 |
 
+**Sister portfolio:** [TryHackMe study portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio)
+
 ---
 
 ## 1. About This Repository

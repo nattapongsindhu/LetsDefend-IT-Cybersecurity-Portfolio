@@ -16,7 +16,6 @@ learned blue-team work: what I studied, what I practised, what I built, and what
 | **Status** | Learning Path complete — 25 of 25 modules · 3 live alert cases closed · 6 investigation reports |
 | **Platform** | [LetsDefend](https://app.letsdefend.io/user/gnopattan) — profile `gnopattan` |
 | **Period** | November – December 2026 |
-| **Sister portfolio** | [TryHackMe-IT-Cybersecurity-Portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio) |
 
 ---
 
@@ -65,17 +64,6 @@ who wants to see how a self-directed learner documents work.
 The path is built in a fixed order, from SOC basics to malware analysis and lab building. I worked
 through it in that order without skipping modules. The module-by-module breakdown is summarised in
 [Study Notes](study-notes/README.md).
-
-### Related study (sister repository)
-
-| Path | Platform | Status |
-| :--- | :--- | :--- |
-| Pre Security | TryHackMe | Completed |
-| SOC Level 1 | TryHackMe | Completed |
-
-Details and write-ups for those paths live in the
-[TryHackMe-IT-Cybersecurity-Portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio), so this
-repository stays focused on the LetsDefend work.
 
 ---
 
@@ -167,7 +155,6 @@ application and want the long version, ask and I will send it.
 | LetsDefend profile | [LetsDefend](https://app.letsdefend.io/user/gnopattan) — account `gnopattan`, the account the path was completed on |
 | TryHackMe profile | [tryhackme.com/p/nattapongsindhu](https://tryhackme.com/p/nattapongsindhu) |
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
-| TryHackMe portfolio | [TryHackMe-IT-Cybersecurity-Portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio) |
 
 Certificate images are stored in [`certificates/`](certificates/). The image files are added as they are
 downloaded from the platform dashboards, so the folder may briefly show placeholders.

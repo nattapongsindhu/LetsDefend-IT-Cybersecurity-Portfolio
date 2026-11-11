@@ -237,3 +237,17 @@ LetsDefend-IT-Cybersecurity-Portfolio/
 Everything here is my own writing. The learning content comes from the LetsDefend platform; the
 summaries, the analysis, the mistakes and the conclusions are mine. Where a value came from a course
 walkthrough rather than my own observation, the evidence summary says so.
+
+---
+
+## License
+
+| Part | License |
+| :--- | :--- |
+| Code (the Python log analyzer) | **MIT** — see [LICENSE](LICENSE). Use it, change it, ship it. |
+| Written content (notes, evidence summaries, this README) | © Nattapong Sindhu. Quote it with attribution; do not republish it as your own. |
+| Platform content quoted for context | Belongs to LetsDefend / TryHackMe; used here only as short references |
+
+If you are a recruiter or an interviewer, you do not need permission to read, print or share a link to this
+repository. That is what it is for.
+

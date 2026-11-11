@@ -7,6 +7,31 @@ what changed, not by file.
 
 ---
 
+## [1.2.1] — 2026-11-11
+
+Follow-up fixes after a second review of v1.2.0.
+
+### Fixed
+
+- **Attachment password removed from both mail screenshots.** The password line is cropped from
+  `01-mail-evidence.png` and `02-mail-body.png`, and the screenshots README now records the crop.
+- **Stale claim in the skills table.** "6 reports in this repository" replaced with "5 case summaries and
+  1 Python tool", matching the rest of the README.
+
+### Changed
+
+- **SPL rule now has a bounded time window** (`earliest=-15m latest=now`) and the redundant port-range
+  clause is gone. Without a window the search was a scan.
+- **Every rule carries a status line**: draft, not tested against real telemetry, tuning required.
+- **Two new rule-lint tests**: one fails if the SPL window becomes unbounded, one fails if the redundant
+  port clause returns. Rule lint is now 17 tests.
+
+### Notes
+
+- CI scans `.md`, `.py` and `.log`. It cannot read text inside a PNG, so image redaction stays a manual step
+  in the pre-publish checklist.
+
+---
 ## [1.2.0] — 2026-11-11
 
 Review-driven release. An external review scored the repository 74/100 and listed six high-impact gaps; this

@@ -14,6 +14,8 @@ so treat them as a starting point for a detection team, not as finished detectio
 
 ## Rule 1 — Office spawns a script host (Sigma)
 
+**Status:** draft · **Tested against real telemetry:** no · **Tuning:** required before use
+
 **Why:** in case 03 the workbook was not the attack; the `cscript.exe` it started was. A spreadsheet has no
 business launching a script interpreter.
 
@@ -66,13 +68,14 @@ alert. Start in `experimental` and route to a test index first.
 
 ## Rule 2 — Outbound session to an uncommon port (SPL)
 
+**Status:** draft · **Tested against real telemetry:** no · **Tuning:** required before use
+
 **Why:** in case 01 the dropped binary opened a TCP session to a hosting address on port `3451`. Port 443 is
 normal; port 3451 from a desktop process is not.
 
 ```spl
-index=firewall action=permit
+index=firewall action=permit earliest=-15m latest=now
 | eval dest_port=tonumber(dest_port)
-| where dest_port < 1024 OR (dest_port >= 1024 AND dest_port <= 65535)
 | where NOT (dest_port IN (53, 80, 123, 443, 8080, 8443))
 | stats count AS attempts,
         min(_time) AS first_seen,
@@ -86,8 +89,10 @@ index=firewall action=permit
 | sort - attempts
 ```
 
-**Reading it:** one hit is noise. Three or more sessions from the same host to the same address and port in
-a short window is a conversation. That is what case 01 looked like.
+**Reading it:** the window is bounded by `earliest=-15m latest=now`, so the search always looks at the last
+fifteen minutes and never at the whole index. The threshold is the second bound: three or more sessions from
+the same host to the same address and port inside those fifteen minutes is a conversation. That is what case
+01 looked like.
 
 **Tuning notes:** add the company's approved outbound ports to the exclusion list. If the firewall logs do
 not carry `process_name`, pivot on `dest_ip` alone and join with EDR later.
@@ -95,6 +100,8 @@ not carry `process_name`, pivot on `dest_ip` alone and join with EDR later.
 ---
 
 ## Rule 3 — Mail delivery, then a download, then a beacon (KQL)
+
+**Status:** draft · **Tested against real telemetry:** no · **Tuning:** required before use
 
 **Why:** cases 01 and 05 both followed the same shape: a message was delivered, a user downloaded a file,
 and a process connected out. Any one row is weak. The three together are the case.

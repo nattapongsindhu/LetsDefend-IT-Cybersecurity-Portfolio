@@ -5,8 +5,8 @@ published. Each image is here to support a specific claim in the case summaries.
 
 | File | Case | What it proves | What was removed |
 | :--- | :--- | :--- | :--- |
-| `01-mail-evidence.png` | Case 01 | The message was delivered, with sender, recipient, subject and action | Nothing — the panel has no answers |
-| `02-mail-body.png` | Case 01 | The body, the "Redeem Now" link and the attachment name | Nothing |
+| `01-mail-evidence.png` | Case 01 | The message was delivered, with sender, recipient, subject and action | The attachment password line, cropped out at 610 px |
+| `02-mail-body.png` | Case 01 | The body, the "Redeem Now" link and the attachment name | The attachment password line, cropped out at 636 px |
 | `03-endpoint-empty.png` | Case 01 | The endpoint console listed no hosts, which is why isolation stayed a recommendation | Nothing |
 | `04-soc138-case-report.png` | Case 03 | Case closed with 100 % playbook success and the alert fields (hash, file name, device action) | The answer panel below the crop line |
 | `05-soc137-case-report.png` | Case 05 | The blocked host in the same campaign, same report layout | The answer panel below the crop line |
@@ -21,6 +21,8 @@ the answer text.
 ## Redaction rules I applied
 
 1. No flags, no answer text, no "correct" markers.
+1. No attachment or archive password, even a training-lab one. The password line is cropped from both mail
+   captures. CI cannot see inside a PNG, so this rule is enforced by opening the image before every commit.
 2. No session tokens, no email addresses of other people, no browser chrome with a logged-in account menu.
 3. No hostnames or IPs from real networks; only lab ranges.
 4. No file paths that reveal a Windows username.

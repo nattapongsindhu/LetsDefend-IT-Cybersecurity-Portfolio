@@ -87,6 +87,15 @@ class TestSplRule(unittest.TestCase):
     def test_has_a_threshold(self) -> None:
         self.assertRegex(self.rule, r"where attempts >= \d+")
 
+    def test_time_window_is_bounded(self) -> None:
+        """An unbounded search is a scan, not a detection."""
+        self.assertRegex(self.rule, r"earliest=-\d+[mhd]")
+        self.assertIn("latest=now", self.rule)
+
+    def test_has_no_redundant_port_range_clause(self) -> None:
+        """The earlier draft had a port clause that could never be false."""
+        self.assertNotIn("dest_port < 1024 OR", self.rule)
+
     def test_excludes_common_ports(self) -> None:
         self.assertRegex(self.rule, r"NOT \(dest_port IN \([0-9, ]+\)\)")
 

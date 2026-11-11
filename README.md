@@ -82,7 +82,7 @@ through it in that order without skipping modules. The module-by-module breakdow
 | Malware and document analysis | Modules 9–13, 24 | Use a sandbox report, read a macro chain, follow a C2 session |
 | Threat intelligence | Modules 19–20 | Check IOCs against VirusTotal and use TI to enrich a case |
 | Incident response | Modules 17, 21 | Contain, eradicate, recover, and record the decision |
-| Documentation | 6 reports in this repository | Turn an investigation into a report a manager can read |
+| Documentation | 5 case summaries and 1 Python tool | Turn an investigation into a report a manager can read |
 
 ### What I am not claiming
 

@@ -131,6 +131,25 @@ active.
 
 ---
 
+## Investigation workflow
+
+Every case in this repository follows the same seven steps. The diagram and the "done" definition for
+each step are in [docs/architecture.md](docs/architecture.md).
+
+```mermaid
+flowchart LR
+    A[Alert] --> B{Triage}
+    B -- benign --> C[Close + reason]
+    B -- suspicious --> D[Collect: mail, proxy, firewall, endpoint]
+    D --> E[Correlate on time and host]
+    E --> F{Verdict}
+    F --> G[Containment plan]
+    G --> H[Report]
+    H --> I[Detection idea]
+```
+
+---
+
 ## 6. Practical Evidence
 
 Work I produced myself. Each item is an evidence summary: what the case was, what I did, what the
@@ -228,10 +247,18 @@ LetsDefend-IT-Cybersecurity-Portfolio/
 ├── practical-evidence/             case summaries and the Python log analyzer
 │   └── python-log-analyzer/        tool, sample log, unit tests, sample output
 ├── detection-engineering/          three rules written from these cases
+├── docs/architecture.md            the investigation workflow diagram
 ├── .github/workflows/ci.yml        tests + secret scan on every push
 ├── certificates/                   certificate images and credential links
-└── SECURITY-CHECK.md               the pre-publish safety checklist
+├── SECURITY-CHECK.md               the pre-publish safety checklist
+└── CHANGELOG.md                    what changed, when and why
 ```
+
+---
+
+## Change history
+
+What changed and when: [CHANGELOG.md](CHANGELOG.md).
 
 ---
 

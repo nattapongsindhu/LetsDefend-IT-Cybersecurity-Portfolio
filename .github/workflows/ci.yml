@@ -23,7 +23,7 @@ jobs:
       - name: Show version
         run: python --version
 
-      - name: Run unit tests
+      - name: Run analyzer unit tests
         working-directory: practical-evidence/python-log-analyzer
         run: python -m unittest discover -s . -p "test_*.py" -v
 
@@ -32,6 +32,24 @@ jobs:
         run: |
           python analyze.py sample_access.log --top 5
           python analyze.py sample_access.log --json > /dev/null
+
+  test-rules:
+    name: Detection rule lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install rule-lint dependency
+        run: python -m pip install --quiet pyyaml
+
+      - name: Lint the detection rules
+        run: python -m unittest discover -s detection-engineering/tests -p "test_*.py" -v
 
   secret-scan:
     name: Secret pattern scan
@@ -45,7 +63,8 @@ jobs:
           set -e
           echo "Scanning for credential-like patterns..."
           if grep -rniE "(api[_-]?key\s*[:=]|secret\s*[:=]|bearer [A-Za-z0-9._-]{20,}|password\s*[:=]\s*[^ ]|P@ss)" \
-               --include="*.md" --include="*.py" --include="*.log" --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
+               --include="*.md" --include="*.py" --include="*.log" \
+               --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
             echo "::error::Credential-like pattern found. Redact it before pushing."
             exit 1
           fi
@@ -56,7 +75,8 @@ jobs:
           set -e
           echo "Scanning for flags and answer markers..."
           if grep -rniE "(flag\{|thm\{|htb\{|letsdefend\{|correct answer)" \
-               --include="*.md" --include="*.py" --include="*.log" --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
+               --include="*.md" --include="*.py" --include="*.log" \
+               --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
             echo "::error::Flag or answer marker found. Remove it before pushing."
             exit 1
           fi

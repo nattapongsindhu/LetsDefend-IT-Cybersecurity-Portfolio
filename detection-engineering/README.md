@@ -24,6 +24,7 @@ status: experimental
 description: Detects a Microsoft Office process starting cscript, wscript or mshta, a common macro execution pattern
 references:
   - https://attack.mitre.org/techniques/T1059/
+  - ../practical-evidence/03-macro-document-to-c2.md
 author: Nattapong Sindhu
 date: 2026/11/11
 tags:

@@ -9,24 +9,9 @@ is the register; when an image is added, the file column is filled in.
 
 | Certificate / Badge | Platform | Issued | Image | Verify |
 | :--- | :--- | :--- | :--- | :--- |
-| SOC Analyst Learning Path | LetsDefend | 2026 | [transcript screenshot](letsdefend-transcript.png) | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
+| SOC Analyst Learning Path | LetsDefend | 2026 | *pending download* | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | Pre Security | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
 | SOC Level 1 | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
-
-## LetsDefend transcript, in numbers
-
-The screenshot in this folder is the platform transcript for the account the path was completed on.
-
-| Metric | Value |
-| :--- | ---: |
-| Score | **2,160 points** |
-| SLA | **51** |
-| Success rate | **100 %** |
-| Investigated alert types | Exchange, Proxy, Mobile, Threat Intel, Malware, Ransomware, Brute Force, Web Attack, Generic, Unauthorized Access, LOLBin, Data Leakage, Persistence, C2, Privilege Escalation, APT Group |
-| Most recent badge | Brute Force — 11 Nov 2026 |
-
-The radar chart is the useful part for a reviewer: it shows the breadth of alert types actually worked, not
-just a single score.
 
 ## How to add an image
 

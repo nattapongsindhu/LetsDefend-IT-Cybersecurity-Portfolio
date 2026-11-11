@@ -26,11 +26,6 @@ Follow-up fixes after a second review of v1.2.0.
 - **Two new rule-lint tests**: one fails if the SPL window becomes unbounded, one fails if the redundant
   port clause returns. Rule lint is now 17 tests.
 
-### Added
-
-- **LetsDefend transcript screenshot** in `certificates/`, with the platform numbers recorded in the README:
-  2,160 points, SLA 51, 100 % success rate, and the alert-type radar that shows the breadth of work.
-
 ### Notes
 
 - CI scans `.md`, `.py` and `.log`. It cannot read text inside a PNG, so image redaction stays a manual step

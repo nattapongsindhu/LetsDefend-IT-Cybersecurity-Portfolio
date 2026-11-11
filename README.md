@@ -16,6 +16,7 @@ learned blue-team work: what I studied, what I practised, what I built, and what
 | **Status** | Learning Path complete — 25 of 25 modules · 3 live alert cases closed · 5 case summaries · 1 Python tool · 3 detection rules |
 | **Platform** | [LetsDefend](https://letsdefend.io/) — profile [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | **Period** | November – December 2026 |
+| **Platform transcript** | 2,160 points · SLA 51 · 100 % success rate · [screenshot](certificates/letsdefend-transcript.png) |
 
 **Sister portfolio:** [TryHackMe study portfolio](https://github.com/nattapongsindhu/TryHackMe-IT-Cybersecurity-Portfolio)
 
@@ -174,11 +175,12 @@ application and want the long version, ask and I will send it.
 | Item | Link |
 | :--- | :--- |
 | [LetsDefend](https://letsdefend.io/) profile | [gnopattan](https://app.letsdefend.io/user/gnopattan) — the account the path was completed on |
+| LetsDefend transcript | [letsdefend-transcript.png](certificates/letsdefend-transcript.png) — 2,160 points, SLA 51, 100 % success rate |
 | TryHackMe profile | [tryhackme.com/p/nattapongsindhu](https://tryhackme.com/p/nattapongsindhu) |
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
 
-Certificate images are stored in [`certificates/`](certificates/). The image files are added as they are
-downloaded from the platform dashboards, so the folder may briefly show placeholders.
+Certificate images and the platform transcript are stored in [`certificates/`](certificates/). The transcript
+screenshot is in place; the TryHackMe certificate images are still placeholders.
 
 ---
 

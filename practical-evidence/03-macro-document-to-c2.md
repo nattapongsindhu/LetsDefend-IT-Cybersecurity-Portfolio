@@ -64,6 +64,49 @@ The file is not the attack. The attack is what the file starts. I initially focu
 the interesting evidence was the script host it spawned and the registry value it wrote. Since then I read
 the process tree before the file properties.
 
+
+---
+
+## Screenshots
+
+![Case report](screenshots/04-soc138-case-report.png)
+
+Case closed with 100 % playbook success, and the alert fields behind the verdict: file hash, file name,
+size and device action. The answer panel is cropped out on purpose.
+
+## Evidence tables
+
+### Timeline
+
+| Step | Event | Source |
+| :---: | :--- | :--- |
+| 1 | Workbook received and opened on the host | Alert pane |
+| 2 | Macro runs and starts a script host | Sandbox process tree |
+| 3 | Script file written to a temporary folder | Sandbox file activity |
+| 4 | HTTPS session to the external host | Sandbox network tab |
+| 5 | Registry value written for persistence | Behaviour mapping |
+| 6 | Second internal host resolves the same domain | Log search |
+
+### IOCs
+
+| Type | Value | Note |
+| :--- | :--- | :--- |
+| File | `ORDER SHEET & SPEC.xlsm` | Business-document lure |
+| MD5 | `7ccf88c0bbe3b29bf19d877c4596a8d4` | Sample identifier |
+| SHA-256 | `7bcd31bd41686c32663c7cabf42b18c50399e3b3b4533fc2ff002d9f2e058813` | Sample identifier |
+| Delivery | `files-ld.s3.us-east-2.amazonaws.com/7ccf88c0…zip` | Object storage |
+| C2 IP | `177.53.143.89` | External host |
+| C2 domain | `multiwaretecnologia.com.br` | Resolved by two hosts |
+| Hosts | `172.16.17.56`, `172.16.17.24` | Victim and probable second victim |
+
+### MITRE ATT&CK for this case
+
+| Technique | Evidence in this case | Source | Confidence | Detection opportunity |
+| :--- | :--- | :--- | :---: | :--- |
+| `T1204` User execution | Document opened, macro enabled | Alert + sandbox | High | [Rule 1](../detection-engineering/README.md) covers the result |
+| `T1059` Command interpreter | Script host started by Office | Sandbox process tree | High | Office → script host rule |
+| `T1547.001` / `T1112` Registry autostart | Run value written after execution | Behaviour mapping | Medium | Watch registry writes from Office children |
+| `T1071` Application layer protocol | HTTPS session to a single external host | Sandbox network tab | High | New-domain or uncommon-port alert |
 ## Skills demonstrated
 
 `malicious document triage` · `sandbox report reading` · `process lineage analysis` · `C2 identification` ·

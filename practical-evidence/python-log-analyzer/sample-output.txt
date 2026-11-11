@@ -1,0 +1,54 @@
+==================================================================
+ ACCESS LOG TRIAGE  file=28 requests, 5 source IPs
+==================================================================
+
+[1] VOLUME
+    parsable requests : 28
+    skipped lines     : 0
+    unique sources    : 5
+    busiest source    : 203.0.113.42 (60.7% of all requests)
+
+[2] TOP 6 SOURCE ADDRESSES
+        17  ############################  203.0.113.42
+         7  ############  10.0.4.11
+         2  ###  10.0.4.13
+         1  ##  10.0.4.12
+         1  ##  10.0.4.14
+
+[3] USER AGENTS THAT ARE TOOLS
+         2  curl/8.4.0
+         1  Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:sitefiles)
+         1  Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:004729)
+         1  Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:map_codes)
+         1  Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:002989)
+
+[4] TOP 6 PATHS
+         6  /shop/login.php
+         4  /shop/product.php
+         3  /shop/index.php
+         3  /shop/cart.php
+         3  /shop/portal.php
+         1  /
+
+[5] STATUS CODES
+        12  200
+         7  404
+         5  401
+         2  403
+         1  302
+         1  500
+
+[6] POST REQUESTS TO LOGIN-LIKE PATHS
+         6  203.0.113.42   (brute-force hint when this is high in a short window)
+
+[7] REQUESTS WITH ATTACK-LIKE PAYLOADS (8)
+    203.0.113.42     GET   sensitive-file       /.git/config
+    203.0.113.42     GET   sensitive-file       /.env
+    203.0.113.42     GET   os-command           /shop/portal.php?msg=%22%22%3Bsystem(%27whoami%27)
+    203.0.113.42     GET   os-command,account-creation /shop/portal.php?msg=%22%22%3Bsystem(%27net%20user%20svc-bac
+    10.0.4.12        GET   sql-injection        /shop/index.php?id=1%20UNION%20SELECT%20username,password%20
+    10.0.4.13        GET   path-traversal,sensitive-file /shop/product.php?file=../../../../etc/passwd
+
+==================================================================
+ Read order: start with [7], then [3] and [6], then the busiest source in [2].
+==================================================================

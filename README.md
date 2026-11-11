@@ -4,7 +4,7 @@
 ![Team](https://img.shields.io/badge/Team-Blue%20Team-1f6feb?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-LetsDefend-8A2BE2?style=for-the-badge)
 ![Path](https://img.shields.io/badge/Path-25%20%2F%2025%20Complete-brightgreen?style=for-the-badge)
-![Evidence](https://img.shields.io/badge/Evidence-5%20Cases%20%2B%206%20Reports-orange?style=for-the-badge)
+![Evidence](https://img.shields.io/badge/Evidence-5%20Cases%20%2B%201%20Tool%20%2B%203%20Rules-orange?style=for-the-badge)
 ![Code](https://img.shields.io/badge/Code-Python-yellow?style=for-the-badge&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
@@ -13,7 +13,7 @@ learned blue-team work: what I studied, what I practised, what I built, and what
 
 | | |
 | :--- | :--- |
-| **Status** | Learning Path complete — 25 of 25 modules · 3 live alert cases closed · 6 investigation reports |
+| **Status** | Learning Path complete — 25 of 25 modules · 3 live alert cases closed · 5 case summaries · 1 Python tool · 3 detection rules |
 | **Platform** | [LetsDefend](https://letsdefend.io/) — profile [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | **Period** | November – December 2026 |
 
@@ -143,7 +143,7 @@ result was, and what I could not verify.
 | 03 | [Macro document to C2](practical-evidence/03-macro-document-to-c2.md) | Live alert case | True positive, macro to C2 with persistence |
 | 04 | [Benign activity review](practical-evidence/04-benign-activity-review.md) | False-positive study | Tuning plan for an alert that fires on internal tests |
 | 05 | [Campaign reconstruction](practical-evidence/05-campaign-reconstruction.md) | Multi-host incident | Three hosts, one campaign, two confirmed outcomes |
-| 06 | [Python log analyzer](practical-evidence/python-log-analyzer/) | Tool I built | Parses access logs, flags scanners and injection payloads |
+| 06 | [Python log analyzer](practical-evidence/python-log-analyzer/) | Tool I built | Parses access logs, flags scanners and injection payloads — 9 unit tests, runs in CI |
 
 Every case links back to a full report held in my private working repository. If you are reviewing my
 application and want the long version, ask and I will send it.
@@ -226,6 +226,9 @@ LetsDefend-IT-Cybersecurity-Portfolio/
 ├── README.md                       this page
 ├── study-notes/                    concept summaries in my own words
 ├── practical-evidence/             case summaries and the Python log analyzer
+│   └── python-log-analyzer/        tool, sample log, unit tests, sample output
+├── detection-engineering/          three rules written from these cases
+├── .github/workflows/ci.yml        tests + secret scan on every push
 ├── certificates/                   certificate images and credential links
 └── SECURITY-CHECK.md               the pre-publish safety checklist
 ```

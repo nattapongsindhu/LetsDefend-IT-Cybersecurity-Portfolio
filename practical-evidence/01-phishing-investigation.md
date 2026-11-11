@@ -63,6 +63,55 @@ report says that in plain words instead of describing an action I did not take.
 I would check the mailbox rules before the endpoint. Attackers who deliver mail often add a hidden
 forwarding rule, and that takes thirty seconds to check. I only thought of it after closing the case.
 
+
+---
+
+## Screenshots
+
+| Image | What it shows |
+| :--- | :--- |
+| ![Mail delivered](screenshots/01-mail-evidence.png) | The message in the mail console: sender, recipient, subject, sender IP, action allowed |
+| ![Mail body](screenshots/02-mail-body.png) | The body with the "Redeem Now" link and the attachment name |
+
+## Evidence tables
+
+### Timeline
+
+| Time (+03:00) | Event | Source |
+| :--- | :--- | :--- |
+| 2024-05-12 23:20:33 | Message delivered to the mailbox | Mail gateway |
+| 2024-05-13 12:59:44 | User's browser fetched the archive | Proxy |
+| 2024-05-13 13:00:39 | Dropped binary opened a session to the internet host | Firewall |
+| 2024-05-13 13:00:51 | Same binary tried localhost and was denied | Firewall |
+| 2024-05-13 13:01:48 | Second session to the same internet host, allowed | Firewall |
+
+The 13-hour gap between delivery and download is the part most people miss: the mail sat in the inbox
+overnight and the user acted the next morning.
+
+### IOCs
+
+| Type | Value | Note |
+| :--- | :--- | :--- |
+| Domain | `coffeeshooop.com` | Lookalike spelling of a coffee brand |
+| Sender | `free@coffeeshooop.com` | External, consumer-style address |
+| Delivery URL | `files-ld.s3.us-east-2.amazonaws.com/...-free-coffee.zip` | Public object storage, random prefix |
+| File | `free-coffee.zip` → `Coffee.exe` | Password-protected archive |
+| SHA-256 | `CD903AD2211CF7D166646D75E57FB866000F4A3B870B5EC759929BE2FD81D334` | Dropped binary |
+| Network | `37.120.233.226:3451` TCP | Command and control |
+| Host | `172.16.20.151` | Victim workstation |
+
+All values are lab data from the training platform. They are published because they are already public
+indicators, not because they belong to anyone.
+
+### MITRE ATT&CK for this case
+
+| Technique | Evidence in this case | Source | Confidence | Detection opportunity |
+| :--- | :--- | :--- | :---: | :--- |
+| `T1566.002` Spearphishing link | Mail with a link and an archive | Mail gateway | High | Rule on lookalike domains plus password-protected archives |
+| `T1204` User execution | User opened the archive and ran the file | Proxy + endpoint evidence | High | Alert on user-downloaded binaries that start child processes |
+| `T1059` Command interpreter | Multiple shell children from the dropped binary | Endpoint, via course walkthrough | Medium | Count shell children per parent; 3+ is a signal |
+| `T1071` Application layer protocol | Session to `37.120.233.226:3451` | Firewall | High | [Rule 2](../detection-engineering/README.md) — uncommon port |
+| `T1027` Obfuscated files (possible) | Password-protected archive bypasses scanning | Alert context | Possible | Score archives that arrive with a password |
 ## Skills demonstrated
 
 `email header analysis` · `phishing triage` · `proxy and firewall log correlation` · `process lineage

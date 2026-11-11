@@ -61,6 +61,34 @@ A false positive is not a failure of the analyst; it is information about the ru
 though: every unnecessary alert spends analyst time and teaches users to ignore warnings. Tuning is
 security work, not paperwork.
 
+
+---
+
+## Evidence tables
+
+### Timeline
+
+| Time | Event | Source |
+| :--- | :--- | :--- |
+| 2023-10-21 23:53:21 | Internal mailbox requests a Linux user creation | Mail records |
+| 2023-10-22 00:15:43 | Operations mailbox replies in the same thread | Mail records |
+
+The 22-minute gap matters: an attacker does not usually answer his own request in the same thread.
+
+### IOCs
+
+None. This is the point of the case: the activity is authorised and there is nothing to block. The useful
+output is a tuning rule, not an indicator.
+
+### MITRE ATT&CK for this case
+
+| Technique | Evidence in this case | Source | Confidence | Detection opportunity |
+| :--- | :--- | :--- | :---: | :--- |
+| `T1136` Create account (benign twin) | Account creation requested by an internal mailbox | Mail records | High | Correlate with change tickets before alerting |
+| — | No attack technique applies | — | — | The detection work is suppression with authentication |
+
+Mapping an authorised test to an attack technique is exactly how false positives are born. The table is
+here to show the comparison, not to claim an intrusion.
 ## Skills demonstrated
 
 `false-positive analysis` · `rule tuning` · `authenticated-sender reasoning` · `risk assessment` ·

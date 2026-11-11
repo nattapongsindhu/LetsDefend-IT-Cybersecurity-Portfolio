@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test-analyzer:
+    name: Python log analyzer tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Show version
+        run: python --version
+
+      - name: Run unit tests
+        working-directory: practical-evidence/python-log-analyzer
+        run: python -m unittest discover -s . -p "test_*.py" -v
+
+      - name: Smoke test the CLI
+        working-directory: practical-evidence/python-log-analyzer
+        run: |
+          python analyze.py sample_access.log --top 5
+          python analyze.py sample_access.log --json > /dev/null
+
+  secret-scan:
+    name: Secret pattern scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Look for credential-like strings
+        run: |
+          set -e
+          echo "Scanning for credential-like patterns..."
+          if grep -rniE "(api[_-]?key\s*[:=]|secret\s*[:=]|bearer [A-Za-z0-9._-]{20,}|password\s*[:=]\s*[^ ]|P@ss)" \
+               --include="*.md" --include="*.py" --include="*.log" . ; then
+            echo "::error::Credential-like pattern found. Redact it before pushing."
+            exit 1
+          fi
+          echo "No credential-like patterns found."
+
+      - name: Look for flags and room answers
+        run: |
+          set -e
+          echo "Scanning for flags and answer markers..."
+          if grep -rniE "(flag\{|thm\{|htb\{|letsdefend\{|correct answer)" \
+               --include="*.md" --include="*.py" --include="*.log" . ; then
+            echo "::error::Flag or answer marker found. Remove it before pushing."
+            exit 1
+          fi
+          echo "No flags or answer markers found."

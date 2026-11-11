@@ -12,7 +12,7 @@ A study portfolio built from the LetsDefend SOC Analyst Learning Path. This repo
 learned blue-team work: what I studied, what I practised, what I built, and what I would do next.
 
 **Status:** Learning Path complete (25 of 25 modules) · 3 live alert cases closed · 6 investigation reports
-**Platform:** [LetsDefend](https://app.letsdefend.io) · **Period:** November – December 2026
+**Platform:** [LetsDefend](https://app.letsdefend.io) · **Profile:** [gnopattan](https://app.letsdefend.io/user/gnopattan) · **Period:** November – December 2026
 **Sister portfolio:** [TryHackMe study portfolio](https://github.com/nattapongsindhu/tryhackme-cybersecurity-portfolio)
 
 ---
@@ -161,8 +161,8 @@ application and want the long version, ask and I will send it.
 
 | Item | Link |
 | :--- | :--- |
-| LetsDefend profile | [app.letsdefend.io](https://app.letsdefend.io) |
-| TryHackMe profile | [tryhackme.com](https://tryhackme.com) |
+| LetsDefend profile | **[app.letsdefend.io/user/gnopattan](https://app.letsdefend.io/user/gnopattan)** — the account the path was completed on |
+| TryHackMe profile | [tryhackme.com/p/nattapongsindhu](https://tryhackme.com/p/nattapongsindhu) |
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
 | TryHackMe portfolio | [tryhackme-cybersecurity-portfolio](https://github.com/nattapongsindhu/tryhackme-cybersecurity-portfolio) |
 

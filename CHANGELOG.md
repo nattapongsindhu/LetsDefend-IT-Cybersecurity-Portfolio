@@ -26,6 +26,11 @@ Follow-up fixes after a second review of v1.2.0.
 - **Two new rule-lint tests**: one fails if the SPL window becomes unbounded, one fails if the redundant
   port clause returns. Rule lint is now 17 tests.
 
+### Added
+
+- **LetsDefend SOC Analyst Learning Path certificate** (issued 11 Nov 2026) in `certificates/`, linked and shown
+  inline on the README.
+
 ### Notes
 
 - CI scans `.md`, `.py` and `.log`. It cannot read text inside a PNG, so image redaction stays a manual step

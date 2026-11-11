@@ -176,9 +176,12 @@ application and want the long version, ask and I will send it.
 | [LetsDefend](https://letsdefend.io/) profile | [gnopattan](https://app.letsdefend.io/user/gnopattan) — the account the path was completed on |
 | TryHackMe profile | [tryhackme.com/p/nattapongsindhu](https://tryhackme.com/p/nattapongsindhu) |
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
+| LetsDefend certificate | [letsdefend-soc-analyst-path.png](certificates/letsdefend-soc-analyst-path.png) — SOC Analyst Learning Path, issued 11 Nov 2026 |
 
-Certificate images are stored in [`certificates/`](certificates/). The image files are added as they are
-downloaded from the platform dashboards, so the folder may briefly show placeholders.
+![LetsDefend SOC Analyst Learning Path certificate](certificates/letsdefend-soc-analyst-path.png)
+
+The LetsDefend certificate is stored in [`certificates/`](certificates/). The two TryHackMe certificate
+images are still placeholders.
 
 ---
 

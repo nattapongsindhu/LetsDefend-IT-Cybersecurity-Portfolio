@@ -4,12 +4,11 @@ This folder holds the certificate images earned through the learning paths, plus
 
 ## Status
 
-Certificate images are being added as they are downloaded from the platform dashboards. The table below
-is the register; when an image is added, the file column is filled in.
+The LetsDefend certificate is in this folder. The two TryHackMe certificate images are still being added.
 
 | Certificate / Badge | Platform | Issued | Image | Verify |
 | :--- | :--- | :--- | :--- | :--- |
-| SOC Analyst Learning Path | LetsDefend | 2026 | *pending download* | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
+| SOC Analyst Learning Path | LetsDefend | 11 Nov 2026 | [letsdefend-soc-analyst-path.png](letsdefend-soc-analyst-path.png) | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
 | Pre Security | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
 | SOC Level 1 | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
 

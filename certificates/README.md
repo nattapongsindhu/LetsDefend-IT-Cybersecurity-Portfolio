@@ -9,8 +9,8 @@ The LetsDefend certificate is in this folder. The two TryHackMe certificate imag
 | Certificate / Badge | Platform | Issued | Image | Verify |
 | :--- | :--- | :--- | :--- | :--- |
 | SOC Analyst Learning Path | LetsDefend | 11 Nov 2026 | [letsdefend-soc-analyst-path.png](letsdefend-soc-analyst-path.png) | [gnopattan](https://app.letsdefend.io/user/gnopattan) |
-| Pre Security | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
-| SOC Level 1 | TryHackMe | 2026 | *pending download* | [THM profile](https://tryhackme.com/p/nattapongsindhu) |
+| Pre Security | TryHackMe | 2026 | *pending download* | — |
+| SOC Level 1 | TryHackMe | 2026 | *pending download* | — |
 
 ## How to add an image
 

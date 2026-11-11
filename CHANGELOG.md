@@ -32,6 +32,11 @@ Follow-up fixes after a second review of v1.2.0.
   inline on the README. The image was resized from 2000 px to 1200 px (452 KB to 289 KB) so the front page loads
   quickly.
 
+### Removed
+
+- **TryHackMe profile links** from section 7 and from the certificate register. This repository stays focused
+  on the LetsDefend work; the TryHackMe write-ups live in their own repository.
+
 ### Notes
 
 - CI scans `.md`, `.py` and `.log`. It cannot read text inside a PNG, so image redaction stays a manual step

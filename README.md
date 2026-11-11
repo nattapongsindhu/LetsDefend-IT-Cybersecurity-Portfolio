@@ -1,5 +1,13 @@
 # LetsDefend IT Cybersecurity Portfolio
 
+![Focus](https://img.shields.io/badge/Focus-SOC%20Analyst-blueviolet?style=for-the-badge)
+![Team](https://img.shields.io/badge/Team-Blue%20Team-1f6feb?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-LetsDefend-8A2BE2?style=for-the-badge)
+![Path](https://img.shields.io/badge/Path-25%20%2F%2025%20Complete-brightgreen?style=for-the-badge)
+![Evidence](https://img.shields.io/badge/Evidence-5%20Cases%20%2B%206%20Reports-orange?style=for-the-badge)
+![Code](https://img.shields.io/badge/Code-Python-yellow?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+
 A study portfolio built from the LetsDefend SOC Analyst Learning Path. This repository documents how I
 learned blue-team work: what I studied, what I practised, what I built, and what I would do next.
 

@@ -178,7 +178,7 @@ application and want the long version, ask and I will send it.
 | GitHub | [github.com/nattapongsindhu](https://github.com/nattapongsindhu) |
 | LetsDefend certificate | [letsdefend-soc-analyst-path.png](certificates/letsdefend-soc-analyst-path.png) — SOC Analyst Learning Path, issued 11 Nov 2026 |
 
-![LetsDefend SOC Analyst Learning Path certificate](certificates/letsdefend-soc-analyst-path.png)
+<img src="certificates/letsdefend-soc-analyst-path.png" alt="LetsDefend SOC Analyst Learning Path certificate" width="620">
 
 The LetsDefend certificate is stored in [`certificates/`](certificates/). The two TryHackMe certificate
 images are still placeholders.

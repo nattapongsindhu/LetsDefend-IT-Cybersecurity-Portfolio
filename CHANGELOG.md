@@ -29,7 +29,8 @@ Follow-up fixes after a second review of v1.2.0.
 ### Added
 
 - **LetsDefend SOC Analyst Learning Path certificate** (issued 11 Nov 2026) in `certificates/`, linked and shown
-  inline on the README.
+  inline on the README. The image was resized from 2000 px to 1200 px (452 KB to 289 KB) so the front page loads
+  quickly.
 
 ### Notes
 

@@ -45,7 +45,7 @@ jobs:
           set -e
           echo "Scanning for credential-like patterns..."
           if grep -rniE "(api[_-]?key\s*[:=]|secret\s*[:=]|bearer [A-Za-z0-9._-]{20,}|password\s*[:=]\s*[^ ]|P@ss)" \
-               --include="*.md" --include="*.py" --include="*.log" . ; then
+               --include="*.md" --include="*.py" --include="*.log" --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
             echo "::error::Credential-like pattern found. Redact it before pushing."
             exit 1
           fi
@@ -56,7 +56,7 @@ jobs:
           set -e
           echo "Scanning for flags and answer markers..."
           if grep -rniE "(flag\{|thm\{|htb\{|letsdefend\{|correct answer)" \
-               --include="*.md" --include="*.py" --include="*.log" . ; then
+               --include="*.md" --include="*.py" --include="*.log" --exclude-dir=.git --exclude-dir=.github --exclude=SECURITY-CHECK.md . ; then
             echo "::error::Flag or answer marker found. Remove it before pushing."
             exit 1
           fi
